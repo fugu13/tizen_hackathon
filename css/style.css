@@ -3,6 +3,7 @@ body {
 
 #footer {
 	overflow-x: scroll;
+	-webkit-overflow-scrolling: touch;
 	white-space: nowrap;
 }
 #stuff {
