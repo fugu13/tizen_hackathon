@@ -1,15 +1,19 @@
-body {
-}
+body {}
+
 
 #footer {
-	overflow-x: scroll;
-	-webkit-overflow-scrolling: touch;
-	white-space: nowrap;
+	text-wrap: none;
+	padding: 0;
+	height: 2rem;
 }
-#stuff {
-	width: 100em;
-	height: 10px;
-	overflow: visible;
-	white-space: nowrap;
-	
+
+.person {
+	margin: 0;
+	padding: 0;
+	width: 19.1%;
+	height: 1.9rem;
+	border-right-width: 1px;
+	border-right-color: #333333;
+	border-right-style: solid;
+	float: left;
 }

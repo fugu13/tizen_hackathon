@@ -40,21 +40,13 @@ var init = function () {
     document.addEventListener( 'tizenhwkey', backEvent );
     backEventListener = backEvent;
     
-    var item_maker = function(index) {
-    	console.log("Item made?");
-    	return {};
-    };
-
-    var cache_items = function(minIdx, maxIdx) {
-    	console.log("cachey");
-    };
-    $('#participantlist').virtualgrid('create', {
-    	itemData: item_maker,
-    	numItemData: function() {
-    		console.log('num');
-    		return 50;
-    	},
-    	cacheItemData: cache_items
+    $('.person').bind('swipeup', function() {
+    	console.log("swiped up");
+    	//$('#content').append()
+    });
+    $('.person').bind('swipeleft', function() {
+    	console.log("swiped left");
+    	//$('#content').append()
     });
 };
 
