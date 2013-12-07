@@ -65,6 +65,12 @@ var init = function () {
     		note();
     	}
     });
+    var contacts = tizen.contact.getDefaultAddressBook();
+    contacts.find(function(people) {
+    	for(var ii = 0; ii < people.length; ii++) {
+    		$('#participants').append('<li><a href="#">' + people[ii].name + '</a></li>').listview('refresh');
+    	}
+    });
     $('#participants').on('click', 'a', function() {
     	database.current = $(this).text();
     	console.log("Current!", database.current);
