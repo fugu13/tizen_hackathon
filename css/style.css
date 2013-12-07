@@ -1,0 +1,14 @@
+body {
+}
+
+#footer {
+	overflow-x: scroll;
+	white-space: nowrap;
+}
+#stuff {
+	width: 100em;
+	height: 10px;
+	overflow: visible;
+	white-space: nowrap;
+	
+}
