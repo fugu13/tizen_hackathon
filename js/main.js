@@ -65,6 +65,25 @@ var init = function () {
     		note();
     	}
     });
+    
+    
+    var now = tizen.time.getCurrentDateTime();
+    var now_dt = tizen.time.getCurrentDateTime();
+    var today_begin = new tizen.TZDate(now_dt.getFullYear(), now_dt.getMonth(), now_dt.getDate());
+    var today_end = today_begin.addDuration(new tizen.TimeDuration(1, "DAYS"));
+    var filter = new tizen.AttributeRangeFilter("startDate", today_begin, today_end);
+    
+    var calendar = tizen.calendar.getDefaultCalendar('EVENT');
+    calendar.find(function(events) {
+    	var name = "Unknown Event";
+    	if(events.length > 0 && events[0].summary) {
+    		name = events[0].summary;
+    	}
+    	$('#notes').append('<li data-role="list-divider">Notes for ' + name + '</li>').listview('refresh');
+    }, function(error) {
+    	console.log("Error!", error.message);
+    }, filter);
+    
     var contacts = tizen.contact.getDefaultAddressBook();
     contacts.find(function(people) {
     	for(var ii = 0; ii < people.length; ii++) {
@@ -73,9 +92,7 @@ var init = function () {
     });
     $('#participants').on('click', 'a', function() {
     	database.current = $(this).text();
-    	console.log("Current!", database.current);
     	$('#notes').append('<li data-role="list-divider">' + database.current + '</li>').listview('refresh');
-    	$('#content').tap();
     });
 };
 

@@ -6,4 +6,5 @@
     <icon src="icon.png"/>
     <name>MetisSingleJQM</name>
     <tizen:privilege name="http://tizen.org/privilege/contact.read"/>
+    <tizen:privilege name="http://tizen.org/privilege/calendar.read"/>
 </widget>
